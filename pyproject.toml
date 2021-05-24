@@ -1,20 +1,19 @@
+[build-system]
+build-backend = "poetry.masonry.api"
+requires = ["poetry>=0.12"]
+
+[tool]
 [tool.poetry]
+authors = ["Rakibul Islam"]
+description = "An API for predicting rice yield of some Bangladeshi district"
 name = "rice-yield-prediction"
 version = "0.1.0"
-description = "An API for predicting rice yield of some Bangladeshi district"
-authors = ["Rakibul Islam"]
-
 [tool.poetry.dependencies]
-python = "^3.8.1"
 flask = "^2.0.1"
 flask-restful = "^0.3.9"
-sklearn = "^0.0"
-pandas = "^1.2.4"
 gunicorn = "^20.1.0"
+pandas = "^1.2.4"
+python = "^3.8.1"
 python-dotenv = "^0.17.1"
-
+sklearn = "^0.0"
 [tool.poetry.dev-dependencies]
-
-[build-system]
-requires = ["poetry>=0.12"]
-build-backend = "poetry.masonry.api"
