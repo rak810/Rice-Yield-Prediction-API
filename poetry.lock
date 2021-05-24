@@ -49,6 +49,18 @@ dotenv = ["python-dotenv"]
 
 [[package]]
 category = "main"
+description = "A Flask extension adding a decorator for CORS support"
+name = "flask-cors"
+optional = false
+python-versions = "*"
+version = "3.0.10"
+
+[package.dependencies]
+Flask = ">=0.9"
+Six = "*"
+
+[[package]]
+category = "main"
 description = "Simple framework for creating REST APIs"
 name = "flask-restful"
 optional = false
@@ -243,8 +255,8 @@ version = "2.0.1"
 watchdog = ["watchdog"]
 
 [metadata]
-content-hash = "7f5b297708fc4f663b7fdb95f407a388812d43bf3f21d1ea11a863d00cf40911"
-python-versions = "3.8.10"
+content-hash = "0caf1148f9b2afbebe42a641c0d03a2ff92ccab1d38e228326a0910c22dc6c45"
+python-versions = "^3.8"
 
 [metadata.files]
 aniso8601 = [
@@ -262,6 +274,10 @@ colorama = [
 flask = [
     {file = "Flask-2.0.1-py3-none-any.whl", hash = "sha256:a6209ca15eb63fc9385f38e452704113d679511d9574d09b2cf9183ae7d20dc9"},
     {file = "Flask-2.0.1.tar.gz", hash = "sha256:1c4c257b1892aec1398784c63791cbaa43062f1f7aeb555c4da961b20ee68f55"},
+]
+flask-cors = [
+    {file = "Flask-Cors-3.0.10.tar.gz", hash = "sha256:b60839393f3b84a0f3746f6cdca56c1ad7426aa738b70d6c61375857823181de"},
+    {file = "Flask_Cors-3.0.10-py2.py3-none-any.whl", hash = "sha256:74efc975af1194fc7891ff5cd85b0f7478be4f7f59fe158102e91abb72bb4438"},
 ]
 flask-restful = [
     {file = "Flask-RESTful-0.3.9.tar.gz", hash = "sha256:ccec650b835d48192138c85329ae03735e6ced58e9b2d9c2146d6c84c06fa53e"},

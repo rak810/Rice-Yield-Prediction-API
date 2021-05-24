@@ -1,10 +1,12 @@
 from flask import Flask
 from flask_restful import Api, Resource, reqparse
+from flask_cors import CORS
 import json
 import data
 import predict
 
 APP = Flask(__name__)
+CORS(APP)
 API = Api(APP)
 
 def gen_json(weather_data, ndvi_val, prod, tp, land):
@@ -33,7 +35,6 @@ class GetWeather(Resource):
   @staticmethod
   def get():
     out = data.get_weather_json()
-    out.headers.add("Access-Control-Allow-Origin", "*")
     return out, 200
 
 class GetYield(Resource):
