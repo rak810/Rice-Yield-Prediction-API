@@ -244,7 +244,7 @@ watchdog = ["watchdog"]
 
 [metadata]
 content-hash = "7f5b297708fc4f663b7fdb95f407a388812d43bf3f21d1ea11a863d00cf40911"
-python-versions = "^3.8.1"
+python-versions = "3.8.1"
 
 [metadata.files]
 aniso8601 = [
