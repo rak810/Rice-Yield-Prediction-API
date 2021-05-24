@@ -33,6 +33,7 @@ class GetWeather(Resource):
   @staticmethod
   def get():
     out = data.get_weather_json()
+    out.headers.add("Access-Control-Allow-Origin", "*")
     return out, 200
 
 class GetYield(Resource):
