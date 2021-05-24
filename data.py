@@ -28,3 +28,5 @@ def get_weather_data(st_name, yr):
   
   return result
 
+def get_weather_json():
+  return wd.to_json()

@@ -31,16 +31,8 @@ def gen_json(weather_data, ndvi_val, prod, tp, land):
 class GetWeather(Resource):
 
   @staticmethod
-  def post():
-    parser = reqparse.RequestParser()
-    parser.add_argument('st')
-    parser.add_argument('yr')
-
-    args = parser.parse_args()  # creates dict
-    arr = data.get_weather_data(args['st'], int(args['yr']))
-    print(arr)
-    out = {"success" : "nigger"}
-    
+  def get():
+    out = data.get_weather_json()
     return out, 200
 
 class GetYield(Resource):
