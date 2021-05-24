@@ -58,14 +58,12 @@ class GetYield(Resource):
     out = gen_json(weather_data, ndvi_val, prod, args['type'], args['land'])
     return out, 200
 
-class GetIndex(Resource):
-  @staticmethod
-  def index():
-    return "<h1>Welcome to our server !!</h1>"
-
 API.add_resource(GetWeather, '/predict/weather')
 API.add_resource(GetYield, '/predict/yield')
-API.add_resource(GetIndex, '/')
+
+@APP.route('/')
+def index():
+    return "<h1>Hey Nigga </h1>"
 
 if __name__ == '__main__':
     APP.run(debug=True, port='1080')
