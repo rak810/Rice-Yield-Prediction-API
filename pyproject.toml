@@ -5,7 +5,7 @@ description = "An API for predicting rice yield of some Bangladeshi district"
 authors = ["Rakibul Islam"]
 
 [tool.poetry.dependencies]
-python = "^3.8"
+python = "^3.8.1"
 flask = "^2.0.1"
 flask-restful = "^0.3.9"
 sklearn = "^0.0"
