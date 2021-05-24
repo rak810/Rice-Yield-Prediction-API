@@ -1,6 +1,6 @@
 import requests
 
-url = 'http://127.0.0.1:1080/predict/yield'  # localhost and the defined port + endpoint
+url = 'https://rice-yield-prediction-api.herokuapp.com/predict/yield'  # localhost and the defined port + endpoint
 body = {
     "st": "Barisal",
     "yr": 2022,
