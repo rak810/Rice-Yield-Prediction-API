@@ -61,7 +61,9 @@ class getNDVI(Resource):
     parser = reqparse.RequestParser()
     parser.add_argument('st')
     args = parser.parse_args()
-    out = ndvi.get_dist_ndvi_data(args['st'])
+    # out = ndvi.get_dist_ndvi_data(args['st'])
+
+    out = jsonify({'st' : args['st']})
     return out, 200
 
 
