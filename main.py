@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, jsonify
 from flask_restful import Api, Resource, reqparse
 from flask_cors import CORS
 import json
@@ -34,6 +34,8 @@ class GetWeather(Resource):
 
   @staticmethod
   def get():
+    # res = json.dumps(data.get_weather_json())
+    # print('res ', len(res))
     out = data.get_weather_json()
     return out, 200
 
