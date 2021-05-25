@@ -4,6 +4,7 @@ from flask_cors import CORS
 import json
 import data
 import predict
+import ndvi
 
 APP = Flask(__name__)
 CORS(APP)
@@ -54,8 +55,20 @@ class GetYield(Resource):
     out = gen_json(weather_data, ndvi_val, prod, args['type'], args['land'])
     return out, 200
 
+class getNDVI(Resource):
+  @staticmethod
+  def post():
+    parser = reqparse.RequestParser()
+    parser.add_argument('st')
+    args = parser.parse_args()
+    out = ndvi.get_dist_ndvi_data(args['st'])
+    return out, 200
+
+
+
 API.add_resource(GetWeather, '/predict/weather')
 API.add_resource(GetYield, '/predict/yield')
+API.add_resource(getNDVI, '/ndvi')
 
 @APP.route('/')
 def index():
