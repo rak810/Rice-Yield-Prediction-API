@@ -2,9 +2,9 @@ import requests
 
 # https://rice-yield-prediction-api.herokuapp.com/predict/weather
 # http://127.0.0.1:1080/
-url = 'https://rice-yield-prediction-api.herokuapp.com/ndvi'  # localhost and the defined port + endpoint
+url = 'http://127.0.0.1:1080/ndvi'  # localhost and the defined port + endpoint
 body = {
-    "st": "Maulvibazar"
+    "st": "Barisal",
 }
 
 
@@ -18,3 +18,10 @@ else:
 
     # "type": "Aman",
     # "land" : 34995.0
+
+#     {
+#     "st": "Barisal",
+#     "yr": 2021,
+#     "type": "Aman",
+#     "land": 34995.0
+# }

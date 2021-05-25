@@ -19,5 +19,6 @@ def get_dist_ndvi_data(st):
   nfp = urllib.urlopen(os.environ['ndvi_df_link'])
   df = pd.read_csv(nfp)
   df = df[df['st'] == st]
+  print(df.describe())
   return df.to_json(orient='index')
 

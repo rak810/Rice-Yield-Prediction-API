@@ -1,4 +1,4 @@
-from flask import Flask, jsonify
+from flask import Flask
 from flask_restful import Api, Resource, reqparse
 from flask_cors import CORS
 import json
@@ -61,9 +61,8 @@ class getNDVI(Resource):
     parser = reqparse.RequestParser()
     parser.add_argument('st')
     args = parser.parse_args()
-    # out = ndvi.get_dist_ndvi_data(args['st'])
-
-    out = jsonify({'st' : args['st']})
+    print(args['st'])
+    out = ndvi.get_dist_ndvi_data(args['st'])
     return out, 200
 
 
