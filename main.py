@@ -5,6 +5,8 @@ import json
 import data
 import predict
 import ndvi
+import os
+import validation as vld
 
 APP = Flask(__name__)
 CORS(APP)
@@ -65,11 +67,28 @@ class getNDVI(Resource):
     out = ndvi.get_dist_ndvi_data(args['st'])
     return out, 200
 
+class getValidation(Resource):
+  @staticmethod
+  def post():
+    parser = reqparse.RequestParser()
+    parser.add_argument('st')
+    args = parser.parse_args()
+    print(args['st'])
+    aman_json = vld.get_data(args['st'], 'Aman')
+    aus_json = vld.get_data(args['st'], 'Aus')
+    boro_json = vld.get_data(args['st'], 'Boro')
+    res_dict = {}
+    res_dict['aman'] = aman_json
+    res_dict['boro'] = boro_json
+    res_dict['aus'] = aus_json
+    out = json.dumps(res_dict)
+    return out, 200
 
 
 API.add_resource(GetWeather, '/predict/weather')
 API.add_resource(GetYield, '/predict/yield')
 API.add_resource(getNDVI, '/ndvi')
+API.add_resource(getValidation, '/validate')
 
 @APP.route('/')
 def index():

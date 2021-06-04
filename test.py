@@ -2,7 +2,7 @@ import requests
 
 # https://rice-yield-prediction-api.herokuapp.com/predict/weather
 # http://127.0.0.1:1080/
-url = 'http://127.0.0.1:1080/ndvi'  # localhost and the defined port + endpoint
+url = 'http://127.0.0.1:1080/validate'  # localhost and the defined port + endpoint
 body = {
     "st": "Barisal",
 }
