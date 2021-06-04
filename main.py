@@ -5,7 +5,6 @@ import json
 import data
 import predict
 import ndvi
-import os
 import validation as vld
 
 APP = Flask(__name__)
