@@ -28,5 +28,8 @@ def get_weather_data(st_name, yr):
   
   return result
 
-def get_weather_json():
-  return wd.to_json(orient='index')
+def get_weather_json(st, yr):
+  link = os.environ['weather_filter_key']
+  fd = get_df(link)
+  df = fd[(fd['st'] == st) & (fd['yr'] == yr)]
+  return df.to_json(orient='index')

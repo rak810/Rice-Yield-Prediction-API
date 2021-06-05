@@ -33,12 +33,13 @@ def gen_json(weather_data, ndvi_val, prod, tp, land):
   return json.dumps(fin_dict)
 
 class GetWeather(Resource):
-
   @staticmethod
-  def get():
-    # res = json.dumps(data.get_weather_json())
-    # print('res ', len(res))
-    out = data.get_weather_json()
+  def post():
+    parser = reqparse.RequestParser()
+    parser.add_argument('st')
+    parser.add_argument('yr')
+    args = parser.parse_args()
+    out = data.get_weather_json(args['st'], int(args['yr']))
     return out, 200
 
 class GetYield(Resource):
